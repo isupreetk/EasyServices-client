@@ -10,8 +10,14 @@ function HomePage() {
             <HeroCarousel />
         </div>
         <div>
+            <label htmlFor="locationSearch">Search Based on Location</label>
+            <input type="text" name="locationSearch" placeholder="Search based on your location" >
+            </input>
+        </div>
+        <div>
             <ServicesList />
         </div>
+        
         </>
     );
 }
