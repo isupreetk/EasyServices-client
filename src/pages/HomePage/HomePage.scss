@@ -1,7 +1,19 @@
-input {
+.homePage {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent url("../../assets/Icons/search-24px.svg") no-repeat 0px -3px;
+
+    &__searchbar-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    // &__searchbar-label {
+        
+    // }
+
+    &__searchbar-input {
+        width: 70%;
+        background: transparent url("../../assets/Icons/search-24px.svg") no-repeat 0px -3px;
+    }
 }

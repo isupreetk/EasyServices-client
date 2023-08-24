@@ -9,9 +9,9 @@ function HomePage() {
         <div>
             <HeroCarousel />
         </div>
-        <div>
-            <label htmlFor="locationSearch">Search Based on Location</label>
-            <input type="text" name="locationSearch" placeholder="Search based on your location" >
+        <div className="homePage__searchbar-container">
+            <label className="homePage__searchbar-label" htmlFor="locationSearch">Search Based on Location</label>
+            <input className="homePage__searchbar-input" type="text" name="locationSearch" placeholder="Search based on your location" >
             </input>
         </div>
         <div>

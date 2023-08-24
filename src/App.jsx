@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import SupportPage from "./pages/SupportPage/SupportPage";
 import ServiceSchedulingPage from "./pages/ServiceSchedulingPage/ServiceSchedulingPage";
 
@@ -30,6 +31,7 @@ function App() {
       {/* <Header /> */}
       <Routes>
         <Route path="/" element={ < HomePage /> } />
+        <Route path="/login" element={ < LoginPage /> } />
         <Route path="/support" element={ < SupportPage /> } />
         <Route path="/schedule" element={ < ServiceSchedulingPage /> } />
       </Routes>
