@@ -1,6 +1,9 @@
 import "./ServicesList.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ServiceCard from "../ServiceCard/ServiceCard";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 function ServicesList() {
 
@@ -25,22 +28,40 @@ function ServicesList() {
     return (
         <>
             <h3>List of Services</h3>
-            <ul>
+
+            <section className="services-list">
+
+            {/* <ul> */}
+            {/* <Row xs={1} md={2} className="g-4">
+      {Array.from({ length: 4 }).map((_, idx) => (
+        <Col key={idx}> */}
+
                 {
                     servicesList.map((service) => {
                         return (
-                            <li key={service.service_id}>
-                                <p>{service.service_id}</p>
-                                <p>{service.service_name}</p>
-                                <p>{service.service_provider}</p>
-                                <p>{service.service_provider_location}</p>
-                                <p>{service.cost}</p>
-                            </li>
+
+                        <ServiceCard key={service.id} service={service}/>
+
+                            // <li key={service.service_id}>
+                            //     <p>{service.id}</p>
+                            //     <p>{service.name}</p>
+                            //     <p>{service.description}</p>
+                            //     <p>{service.image_URL}</p>
+                            //     <p>{service.estimated_cost}</p>
+                            //     <p>{service.location}</p>
+                            //     {/* <p>{service.service_category_id}</p> */}
+                            // </li>
 
                         )
                     })
                 }
-            </ul>
+            {/* </ul> */}
+
+            {/* </Col>
+      ))}
+    </Row> */}
+
+</section>
         </>
     );
 }

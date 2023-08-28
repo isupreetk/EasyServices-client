@@ -30,7 +30,7 @@ function App() {
     <BrowserRouter>
       {/* <Header /> */}
       <Routes>
-        <Route path="/" element={ < HomePage /> } />
+        <Route path="/services" element={ < HomePage /> } />
         <Route path="/login" element={ < LoginPage /> } />
         <Route path="/support" element={ < SupportPage /> } />
         <Route path="/schedule" element={ < ServiceSchedulingPage /> } />
