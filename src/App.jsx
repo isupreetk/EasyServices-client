@@ -28,14 +28,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/services" element={ < HomePage /> } />
         <Route path="/services/:id" element={ < ServiceSchedulingPage /> } />
         <Route path="/login" element={ < LoginPage /> } />
         <Route path="/support" element={ < SupportPage /> } />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
 
     </BrowserRouter>
   );

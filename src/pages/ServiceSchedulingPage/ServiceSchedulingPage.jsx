@@ -54,7 +54,7 @@ function ServiceSchedulingPage() {
            
 
 
-            <div>
+            {/* <div>
                 <label htmlFor="selectedService">Select the service: </label>
                 <select name="selectedService" id="selectedService">
                     <option>Please select required service</option>
@@ -74,7 +74,7 @@ function ServiceSchedulingPage() {
                     <option value="Dobb" >Dobb</option>
                     <option value="Phoebe" >Phoebe</option>
                 </select>
-            </div>
+            </div> */}
         </>
     )
 }
