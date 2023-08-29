@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SupportPage from "./pages/SupportPage/SupportPage";
 import ServiceSchedulingPage from "./pages/ServiceSchedulingPage/ServiceSchedulingPage";
+import ServiceBookedPage from "./pages/ServiceBookedPage/ServiceBookedPage";
 
 function App() {
   const api_URL = process.env.REACT_APP_API_URL;
@@ -28,10 +29,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/services" element={ < HomePage /> } />
         <Route path="/services/:id" element={ < ServiceSchedulingPage /> } />
+        <Route path="/schedule/:serviceId" element={ <ServiceBookedPage /> } />
         <Route path="/login" element={ < LoginPage /> } />
         <Route path="/support" element={ < SupportPage /> } />
       </Routes>
