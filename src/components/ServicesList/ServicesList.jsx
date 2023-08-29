@@ -31,36 +31,13 @@ function ServicesList() {
 
             <section className="services-list">
 
-            {/* <ul> */}
-            {/* <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
-        <Col key={idx}> */}
-
                 {
                     servicesList.map((service) => {
                         return (
-
                         <ServiceCard key={service.id} service={service}/>
-
-                            // <li key={service.service_id}>
-                            //     <p>{service.id}</p>
-                            //     <p>{service.name}</p>
-                            //     <p>{service.description}</p>
-                            //     <p>{service.image_URL}</p>
-                            //     <p>{service.estimated_cost}</p>
-                            //     <p>{service.location}</p>
-                            //     {/* <p>{service.service_category_id}</p> */}
-                            // </li>
-
                         )
                     })
                 }
-            {/* </ul> */}
-
-            {/* </Col>
-      ))}
-    </Row> */}
-
 </section>
         </>
     );

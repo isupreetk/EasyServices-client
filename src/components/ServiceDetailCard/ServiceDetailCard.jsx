@@ -1,10 +1,10 @@
 import { Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CardImage from '../../assets/images/dark_background.jpeg';
-import "./ServiceCard.scss";
+import "./ServiceDetailCard.scss";
 
 
-function ServiceCard({ service }) {
+function ServiceDetailCard({ service }) {
 
     const navigate = useNavigate();
 
@@ -20,13 +20,13 @@ function ServiceCard({ service }) {
             {/* style={{ width: '18rem' }} */}
         <Card.Img variant="top" src={CardImage} />
         <Card.Body>
-          <Card.Title>{service.category_name}</Card.Title>
+          <Card.Title>{service.name}</Card.Title>
           <Card.Text>
-            {service.category_description}
+            {service.description}
           </Card.Text>
-          <Button variant="primary" onClick={handleServiceClick}>See More</Button>
+          <Button variant="primary" onClick={handleServiceClick}>Book Now</Button>
         </Card.Body>
       </Card>
     );
 }
-export default ServiceCard;  
+export default ServiceDetailCard;  
