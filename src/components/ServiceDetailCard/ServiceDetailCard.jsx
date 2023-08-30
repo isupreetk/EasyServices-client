@@ -4,13 +4,12 @@ import CardImage from "../../assets/images/dark_background.jpeg";
 import "./ServiceDetailCard.scss";
 import Accordion from "react-bootstrap/Accordion";
 import { useState, useRef } from "react";
-// import { Navigate } from 'react-router-dom';
 import axios from "axios";
 
 function ServiceDetailCard({ service }) {
   const api_URL = process.env.REACT_APP_API_URL;
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [slotValue, setSlotValue] = useState("");
   const [file1, setFile1] = useState("");
   //   const [file2, setFile2] = useState("");
@@ -89,6 +88,7 @@ function ServiceDetailCard({ service }) {
             .post(`${api_URL}/scheduleImage`, formData, config)
             .then((response) => {
               alert("Booking Successful");
+              navigate("/bookings");
             })
             .catch((error) => {
               console.log(error);
