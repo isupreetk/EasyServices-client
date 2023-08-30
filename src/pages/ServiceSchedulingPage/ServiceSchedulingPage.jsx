@@ -5,56 +5,50 @@ import { useEffect, useState } from "react";
 import ServiceDetailCard from "../../components/ServiceDetailCard/ServiceDetailCard";
 
 function ServiceSchedulingPage() {
-    
-    const params = useParams();
+  const params = useParams();
 
-    const serviceId = params.id;
+  const serviceId = params.id;
 
-    // console.log("serviceId", serviceId);
+  // console.log("serviceId", serviceId);
 
-    const api_URL = `${process.env.REACT_APP_API_URL}/services/${serviceId}`;
+  const api_URL = `${process.env.REACT_APP_API_URL}/services/${serviceId}`;
 
-    const [selectedService, setSelectedService] = useState([]);
+  const [selectedService, setSelectedService] = useState([]);
 
-    const serviceDetails = useEffect(() => {
-    axios.get(api_URL)
-    .then((response) => {
-        console.log(response.data);
+  const serviceDetails = useEffect(() => {
+    axios
+      .get(api_URL)
+      .then((response) => {
+        // console.log(response.data);
         setSelectedService(response.data);
-    }).catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-    })
-},[])
+      });
+  }, []);
 
-    return (
-        <>
-            <h3>Scheduling Page</h3>
-            <ul>
-            {selectedService.map((service) => {
-                return (
-                // <li key={service.id}>
-                //     <p>{service.id}</p>
-                //     <p>{service.name}</p>
-                //     <p>{service.description}</p>
-                //     <p>{service.image_URL}</p>
-                //     <p>{service.estimated_cost}</p>
-                //     <p>{service.location}</p>
-                //     <p>{service.service_category_id}</p>
-                // </li> 
+  return (
+    <>
+      <h3>Scheduling Page</h3>
+      <ul>
+        {selectedService.map((service) => {
+          return (
+            // <li key={service.id}>
+            //     <p>{service.id}</p>
+            //     <p>{service.name}</p>
+            //     <p>{service.description}</p>
+            //     <p>{service.image_URL}</p>
+            //     <p>{service.estimated_cost}</p>
+            //     <p>{service.location}</p>
+            //     <p>{service.service_category_id}</p>
+            // </li>
 
-                <ServiceDetailCard key={service.id} service={service}/>
+            <ServiceDetailCard key={service.id} service={service} />
+          );
+        })}
+      </ul>
 
-                )
-            })
-        }
-
-            </ul>
-            
-           
-           
-
-
-            {/* <div>
+      {/* <div>
                 <label htmlFor="selectedService">Select the service: </label>
                 <select name="selectedService" id="selectedService">
                     <option>Please select required service</option>
@@ -75,8 +69,8 @@ function ServiceSchedulingPage() {
                     <option value="Phoebe" >Phoebe</option>
                 </select>
             </div> */}
-        </>
-    )
+    </>
+  );
 }
 
 export default ServiceSchedulingPage;

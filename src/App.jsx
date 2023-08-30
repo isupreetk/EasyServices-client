@@ -31,14 +31,13 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/services" element={ < HomePage /> } />
-        <Route path="/services/:id" element={ < ServiceSchedulingPage /> } />
-        <Route path="/schedule" element={ <ServiceBookedPage /> } />
-        <Route path="/login" element={ < LoginPage /> } />
-        <Route path="/support" element={ < SupportPage /> } />
+        <Route path="/services" element={<HomePage />} />
+        <Route path="/services/:id" element={<ServiceSchedulingPage />} />
+        <Route path="/schedule" element={<ServiceBookedPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/support" element={<SupportPage />} />
       </Routes>
       {/* <Footer /> */}
-
     </BrowserRouter>
   );
 }

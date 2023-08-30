@@ -49,7 +49,7 @@ function ServiceDetailCard({ service }) {
         user_input: `${event.target.user_input.value}`,
       })
       .then((response) => {
-        console.log("schedule data", response.data);
+        // console.log("schedule data", response.data);
 
         // const formImagesData = [];
 
@@ -88,7 +88,7 @@ function ServiceDetailCard({ service }) {
           axios
             .post(`${api_URL}/scheduleImage`, formData, config)
             .then((response) => {
-              console.log(response.data);
+              alert("Booking Successful");
             })
             .catch((error) => {
               console.log(error);
