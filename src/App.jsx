@@ -33,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/services" element={ < HomePage /> } />
         <Route path="/services/:id" element={ < ServiceSchedulingPage /> } />
-        <Route path="/schedule/:serviceId" element={ <ServiceBookedPage /> } />
+        <Route path="/schedule" element={ <ServiceBookedPage /> } />
         <Route path="/login" element={ < LoginPage /> } />
         <Route path="/support" element={ < SupportPage /> } />
       </Routes>
