@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CardImage from '../../assets/images/dark_background.jpeg';
 import "./ServiceDetailCard.scss";
 import Accordion from 'react-bootstrap/Accordion';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 // import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -16,6 +16,8 @@ function ServiceDetailCard({ service }) {
     const [file1, setFile1] = useState("");
     const [file2, setFile2] = useState("");
     const [file3, setFile3] = useState("");
+
+    const formRef = useRef();
 
     const handleSlotChange = (e) => {
         setSlotValue(e.target.value);
@@ -91,6 +93,7 @@ function ServiceDetailCard({ service }) {
                     )
             }
 
+            formRef.current.reset();
             // [{
             //     user_request_id: response.data[0],
             //     file_URL: `${file1}`,
@@ -128,7 +131,7 @@ function ServiceDetailCard({ service }) {
                             </Accordion.Header>
 
                             <Accordion.Body>
-                                <form onSubmit={(event) => handleSubmitServiceBooking(event)}>
+                                <form ref={formRef} onSubmit={(event) => handleSubmitServiceBooking(event)}>
                                     <label htmlFor="service_category">Service Category: </label>
                                     <input name="service_category" id="service_category" placeholder="Service Category" value={service.category_name} disabled></input>
                                     <input type="hidden" name="service_category_id" id="service_category_id" value={service.service_category_id} disabled></input>
