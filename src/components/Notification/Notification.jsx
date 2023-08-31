@@ -15,7 +15,7 @@ function Notification() {
 
     notification.show();
   };
-  return <button onClick={() => shownotification()}></button>;
+  return <button onClick={() => shownotification()}>Alert Notification</button>;
 }
 
 export default Notification;
