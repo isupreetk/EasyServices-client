@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 function HomePage() {
   return (
     <>
-      <h1>Home Page</h1>
       <div>
         <HeroCarousel />
       </div>
