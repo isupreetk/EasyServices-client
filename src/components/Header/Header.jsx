@@ -11,7 +11,7 @@
 //                 </h1>
 //             </div>
 //             <div className="header__nav">
-//                 <ul className="header__nav-unordered-list"> 
+//                 <ul className="header__nav-unordered-list">
 //                     <li className="header__nav-list-items">
 //                         <NavLink to = "/services" className="header__nav-list-items-link">
 //                         <div className="header__nav-list-items-div">
@@ -51,7 +51,6 @@
 // }
 
 // export default Header;
-
 
 /* next */
 // import Button from 'react-bootstrap/Button';
@@ -120,12 +119,10 @@
 
 /* next */
 
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Header() {
   return (
@@ -136,21 +133,9 @@ function Header() {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            style={{ maxHeight: "100px" }}
             navbarScroll
           >
-
-<Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-
-
             <Nav.Link href="#action1">Services</Nav.Link>
             <Nav.Link href="#action2">About Us</Nav.Link>
             <Nav.Link href="#action2">Contact Us</Nav.Link>
@@ -172,10 +157,9 @@ function Header() {
           <Nav>
             <Nav.Link href="#deets">Sign Up</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-            Log In
+              Log In
             </Nav.Link>
           </Nav>
-
         </Navbar.Collapse>
       </Container>
     </Navbar>
