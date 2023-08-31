@@ -128,7 +128,7 @@ function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Logo</Navbar.Brand>
+        <Navbar.Brand href="/services">Logo</Navbar.Brand>
         {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -136,9 +136,9 @@ function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Services</Nav.Link>
-            <Nav.Link href="#action2">About Us</Nav.Link>
-            <Nav.Link href="#action2">Contact Us</Nav.Link>
+            <Nav.Link href="/services">Services</Nav.Link>
+            <Nav.Link href="/aboutUs">About Us</Nav.Link>
+            <Nav.Link href="/contactUs">Contact Us</Nav.Link>
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
