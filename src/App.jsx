@@ -10,6 +10,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SupportPage from "./pages/SupportPage/SupportPage";
 import ServiceSchedulingPage from "./pages/ServiceSchedulingPage/ServiceSchedulingPage";
 import ServiceBookedPage from "./pages/ServiceBookedPage/ServiceBookedPage";
+import TestNotificationPage from "./pages/TestNotificationPage/TestNotificationPage";
 
 function App() {
   const api_URL = process.env.REACT_APP_API_URL;
@@ -36,6 +37,7 @@ function App() {
         <Route path="/bookings" element={<ServiceBookedPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/support" element={<SupportPage />} />
+        <Route path="/test" element={<TestNotificationPage />} />
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>
