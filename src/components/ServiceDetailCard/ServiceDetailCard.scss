@@ -1,5 +1,14 @@
+div.accordion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 0%;
+    // width: 90%; 
+}
+
 div.card {
-    width: 25%;
+    // width: 100%;
+    width: 44%;
 
     display: inline-flex;
     justify-content: center;

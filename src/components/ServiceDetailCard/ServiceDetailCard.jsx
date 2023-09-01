@@ -1,6 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import CardImage from "../../assets/images/dark_background.jpeg";
+// import CardImage from "../../assets/images/dark_background.jpeg";
 import "./ServiceDetailCard.scss";
 import Accordion from "react-bootstrap/Accordion";
 import { useState, useRef } from "react";
@@ -140,7 +140,7 @@ function ServiceDetailCard({ service }) {
   return (
     <>
       <Card>
-        <Card.Img variant="top" src={CardImage} />
+        <Card.Img variant="top" src={service.image_URL} />
         <Card.Body>
           <Card.Title>{service.name}</Card.Title>
           <Card.Text>{service.description}</Card.Text>
