@@ -1,0 +1,39 @@
+.footer {
+    background-color: cadetblue;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__content {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+
+        &--left {
+            align-items: flex-start;
+        }
+
+        &--right {
+            align-items: flex-end;
+
+        }
+    }
+
+    &__item {
+        display: inline-flex;
+        margin-right: 2.5rem;
+
+        &--image {
+        margin-right: 1.5rem;
+        }
+    }
+
+    // &__image {
+
+    // }
+}

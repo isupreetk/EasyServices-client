@@ -1,8 +1,8 @@
 import "./TestNotificationPage.scss";
-import Notification from "../../components/Notification/Notification";
+import QuoteNotification from "../../components/QuoteNotification/QuoteNotification";
 
 function TestNotificationPage() {
-  return <Notification />;
+  return <QuoteNotification />;
 }
 
 export default TestNotificationPage;

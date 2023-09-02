@@ -11,6 +11,7 @@ import SupportPage from "./pages/SupportPage/SupportPage";
 import ServiceSchedulingPage from "./pages/ServiceSchedulingPage/ServiceSchedulingPage";
 import ServiceBookedPage from "./pages/ServiceBookedPage/ServiceBookedPage";
 import TestNotificationPage from "./pages/TestNotificationPage/TestNotificationPage";
+import TestMessagePage from "./pages/TestMessagePage/TestMessagePage";
 
 function App() {
   const api_URL = process.env.REACT_APP_API_URL;
@@ -37,9 +38,10 @@ function App() {
         <Route path="/bookings" element={<ServiceBookedPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/support" element={<SupportPage />} />
-        <Route path="/test" element={<TestNotificationPage />} />
+        <Route path="/testNotification" element={<TestNotificationPage />} />
+        <Route path="/testMessage" element={<TestMessagePage />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

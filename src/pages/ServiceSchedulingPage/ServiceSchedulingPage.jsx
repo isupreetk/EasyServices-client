@@ -3,6 +3,9 @@ import "./ServiceSchedulingPage.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ServiceDetailCard from "../../components/ServiceDetailCard/ServiceDetailCard";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function ServiceSchedulingPage() {
   const params = useParams();
@@ -34,7 +37,15 @@ function ServiceSchedulingPage() {
       <section className="service-scheduling__section">
         <ul className="service-scheduling__card-container">
           {selectedService.map((service) => {
-            return <ServiceDetailCard key={service.id} service={service} />;
+            return (
+              <Container fluid>
+                <Row>
+                  <Col>
+                    <ServiceDetailCard key={service.id} service={service} />
+                  </Col>
+                </Row>
+              </Container>
+            );
           })}
         </ul>
       </section>
