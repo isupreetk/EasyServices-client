@@ -1,24 +1,24 @@
-import "./HeroCarousel.scss"
-import React, {useState} from "react"; 
-import Carousel from 'react-bootstrap/Carousel';
-import CarouselImage from "../../assets/images/dark_background.jpeg"
+import "./HeroCarousel.scss";
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import CarouselImage from "../../assets/images/dark_background.jpeg";
 
 // const data = [
 //   {
-//    image: require('../../assets/images/Kadabra.png'), 
+//    image: require('../../assets/images/Kadabra.png'),
 //    caption:"Caption",
 //    description:"Description Here"
 //   },
 //   {
-//     image:require('../../assets/images/Kadabra.png'), 
+//     image:require('../../assets/images/Kadabra.png'),
 //     caption:"Caption",
 //     description:"Description Here"
 //    },
 //    {
-//     image:require('../../assets/images/Kadabra.png'), 
+//     image:require('../../assets/images/Kadabra.png'),
 //     caption:"Caption",
 //     description:"Description Here"
-//    } 
+//    }
 // ]
 
 function HeroCarousel() {
@@ -29,7 +29,7 @@ function HeroCarousel() {
 
   return (
     <>
-    {/* <Carousel activeIndex={index} onSelect={handleSelect}>
+      {/* <Carousel activeIndex={index} onSelect={handleSelect}>
        {data.map((slide, i) => {
         return (
           <Carousel.Item>        
@@ -48,14 +48,14 @@ function HeroCarousel() {
       
     </Carousel> */}
 
-{/* <div style={{ display: 'block', width: '100%', padding: 30 }}> */}
-    
+      {/* <div style={{ display: 'block', width: '100%', padding: 30 }}> */}
+
       <Carousel>
         <Carousel.Item interval={3500}>
           <img
             className="d-block w-100"
-src={CarouselImage}
-            alt="Image One"
+            src={CarouselImage}
+            alt="Carousel One"
           />
           <Carousel.Caption>
             <h3>Label for first slide</h3>
@@ -65,8 +65,8 @@ src={CarouselImage}
         <Carousel.Item interval={3500}>
           <img
             className="d-block w-100"
-src={CarouselImage}
-            alt="Image Two"
+            src={CarouselImage}
+            alt="Carousel Two"
           />
           <Carousel.Caption>
             <h3>Label for second slide</h3>
@@ -74,9 +74,8 @@ src={CarouselImage}
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    {/* </div> */}
-
-</>
+      {/* </div> */}
+    </>
   );
 }
 export default HeroCarousel;

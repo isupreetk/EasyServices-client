@@ -1,6 +1,6 @@
 import "./App.scss";
 import axios from "axios";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
@@ -18,16 +18,16 @@ function App() {
 
   // console.log("api_URL", api_URL);
 
-  useEffect(() => {
-    axios
-      .get(`${api_URL}`)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  axios
+    .get(`${api_URL}`)
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  // }, []);
 
   return (
     <BrowserRouter>

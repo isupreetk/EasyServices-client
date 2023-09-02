@@ -6,14 +6,14 @@ import { useEffect, useState } from "react";
 import BookedTasksAccordion from "../../components/BookedTasksAccordion/BookedTasksAccordion";
 
 function ServiceBookedPage() {
-  const api_URL = process.env.REACT_APP_API_URL;
+  // const api_URL = process.env.REACT_APP_API_URL;
 
   const [inProgressResult, setInProgressResult] = useState([]);
   const [completedResult, setCompletedResult] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${api_URL}/bookings/InProgress`)
+      .get(`${process.env.REACT_APP_API_URL}/bookings/InProgress`)
       .then((response) => {
         setInProgressResult(response.data);
       })
@@ -22,7 +22,7 @@ function ServiceBookedPage() {
       });
 
     axios
-      .get(`${api_URL}/bookings/Completed`)
+      .get(`${process.env.REACT_APP_API_URL}/bookings/Completed`)
       .then((response) => {
         setCompletedResult(response.data);
       })

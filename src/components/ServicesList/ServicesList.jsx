@@ -6,14 +6,14 @@ import ServiceCard from "../ServiceCard/ServiceCard";
 // import Row from 'react-bootstrap/Row';
 
 function ServicesList() {
-  const api_URL = `${process.env.REACT_APP_API_URL}/services`;
+  //   const api_URL = `${process.env.REACT_APP_API_URL}/services`;
 
   // console.log(api_URL);
   const [servicesList, setServicesList] = useState([]);
 
   useEffect(() => {
     axios
-      .get(api_URL)
+      .get(`${process.env.REACT_APP_API_URL}/services`)
       .then((response) => {
         // console.log(response.data);
         setServicesList(response.data);

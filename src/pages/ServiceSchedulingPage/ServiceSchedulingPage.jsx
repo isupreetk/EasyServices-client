@@ -14,13 +14,13 @@ function ServiceSchedulingPage() {
 
   // console.log("serviceId", serviceId);
 
-  const api_URL = `${process.env.REACT_APP_API_URL}/services/${serviceId}`;
+  // const api_URL = `${process.env.REACT_APP_API_URL}/services/${serviceId}`;
 
   const [selectedService, setSelectedService] = useState([]);
 
-  const serviceDetails = useEffect(() => {
+  useEffect(() => {
     axios
-      .get(api_URL)
+      .get(`${process.env.REACT_APP_API_URL}/services/${serviceId}`)
       .then((response) => {
         // console.log(response.data);
         setSelectedService(response.data);
@@ -28,7 +28,7 @@ function ServiceSchedulingPage() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [serviceId]);
 
   return (
     <>
