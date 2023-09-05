@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
+import AddQuotePage from "./pages/AddQuotePage/AddQuotePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SupportPage from "./pages/SupportPage/SupportPage";
 import ServiceSchedulingPage from "./pages/ServiceSchedulingPage/ServiceSchedulingPage";
@@ -36,6 +37,8 @@ function App() {
         <Route path="/services" element={<HomePage />} />
         <Route path="/services/:id" element={<ServiceSchedulingPage />} />
         <Route path="/bookings" element={<ServiceBookedPage />} />
+        <Route path="/addQuote" element={<AddQuotePage />} />
+
         <Route path="/login" element={<LoginPage />} />
         <Route path="/support" element={<SupportPage />} />
         <Route path="/testNotification" element={<TestNotificationPage />} />

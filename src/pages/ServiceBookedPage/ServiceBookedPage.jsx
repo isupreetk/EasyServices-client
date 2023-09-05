@@ -1,6 +1,7 @@
 import "./ServiceBookedPage.scss";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
+import { Button } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BookedTasksAccordion from "../../components/BookedTasksAccordion/BookedTasksAccordion";
@@ -29,7 +30,28 @@ function ServiceBookedPage() {
       .catch((error) => {
         console.log(error);
       });
+
+    componentDidMount();
   }, []);
+
+  function componentDidMount() {
+    if (!("Notification" in window)) {
+      console.log("This browser does not support desktop notification");
+    } else {
+      Notification.requestPermission();
+    }
+  }
+
+  function showNotification() {
+    var notification = new Notification("You have received a new quote!", {
+      body: "New notification",
+    });
+    notification.onclick = function () {
+      window.focus();
+      window.open("http://stackoverflow.com/");
+      notification.close();
+    };
+  }
 
   return (
     <>
@@ -41,6 +63,8 @@ function ServiceBookedPage() {
             result={inProgressResult}
             calledFrom={"In Progress"}
           />
+
+          <Button onClick={showNotification}>Add Quote</Button>
         </Tab>
 
         <Tab eventKey="second" href="/bookings/Completed" title="Completed">

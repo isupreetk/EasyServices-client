@@ -14,12 +14,20 @@
 //     }
 // }
 
-div.card {
-    // width: 40%;
-    width: 25%;
+// div.card {
+//     // width: 40%;
+//     width: 25%;
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 20px;
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: flex-start;
+//     margin: 20px;
+// }
+
+Card.Img {
+    height: 120px;
 }
+
+.card:hover {
+    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+  }

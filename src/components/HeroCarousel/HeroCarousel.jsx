@@ -1,7 +1,8 @@
 import "./HeroCarousel.scss";
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import CarouselImage from "../../assets/images/dark_background.jpeg";
+import CarouselImage1 from "../../assets/images/carousel1.jpeg";
+import CarouselImage2 from "../../assets/images/carousel2.jpeg";
 
 // const data = [
 //   {
@@ -54,24 +55,24 @@ function HeroCarousel() {
         <Carousel.Item interval={3500}>
           <img
             className="d-block w-100"
-            src={CarouselImage}
+            src={CarouselImage1}
             alt="Carousel One"
           />
-          <Carousel.Caption>
+          {/* <Carousel.Caption>
             <h3>Label for first slide</h3>
             <p>Sample Text for Image One</p>
-          </Carousel.Caption>
+          </Carousel.Caption> */}
         </Carousel.Item>
         <Carousel.Item interval={3500}>
           <img
             className="d-block w-100"
-            src={CarouselImage}
+            src={CarouselImage2}
             alt="Carousel Two"
           />
-          <Carousel.Caption>
+          {/* <Carousel.Caption>
             <h3>Label for second slide</h3>
             <p>Sample Text for Image Two</p>
-          </Carousel.Caption>
+          </Carousel.Caption> */}
         </Carousel.Item>
       </Carousel>
       {/* </div> */}

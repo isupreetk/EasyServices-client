@@ -1,0 +1,47 @@
+.hero-section {
+    margin-bottom: 1rem;
+    // border-top: 1px solid black;
+    // background-color: lightgray;
+}
+
+.column {
+
+    display: flex;
+    flex-direction: column;
+
+    &__headline {
+        margin-bottom: 1rem;
+    }
+
+    &--left {
+        margin-top: 2rem !important;
+    }
+}
+
+.list {
+    display: flex;
+
+}
+
+.image {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    margin-right: 2rem;
+
+}
+
+.image-right {
+    width: 200px;
+    height: 200px;
+}
+
+.content {
+    display: inline-flex;
+    flex-direction: column;
+
+    &__items {
+        display: flex;
+    }
+}
+

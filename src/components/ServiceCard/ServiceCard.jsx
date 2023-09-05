@@ -13,10 +13,26 @@ function ServiceCard({ service }) {
     navigate(`/services/${service.id}`);
   };
 
+  const styles = {
+    card: {
+      "margin-bottom": "1rem",
+    },
+
+    cardImage: {
+      // height: "120px", //mobile
+      height: "300px", //desktop
+    },
+  };
+
   return (
-    <Card>
+    <Card style={styles.card}>
       {/* style={{ width: '18rem' }} */}
-      <Card.Img variant="top" src={service.image_URL} />
+      <Card.Img
+        className="service-card__image"
+        variant="top"
+        src={service.image_URL}
+        style={styles.cardImage}
+      />
       <Card.Body>
         <Card.Title>{service.category_name}</Card.Title>
         <Card.Text>{service.category_description}</Card.Text>

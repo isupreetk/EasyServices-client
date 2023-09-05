@@ -6,7 +6,7 @@ import Accordion from "react-bootstrap/Accordion";
 import { useState, useRef } from "react";
 import axios from "axios";
 
-function ServiceDetailCard({ service }) {
+function ServiceDetailCard({ individualService }) {
   const api_URL = process.env.REACT_APP_API_URL;
 
   const navigate = useNavigate();
@@ -140,10 +140,10 @@ function ServiceDetailCard({ service }) {
   return (
     <>
       <Card>
-        <Card.Img variant="top" src={service.image_URL} />
+        <Card.Img variant="top" src={individualService.image_URL} />
         <Card.Body>
-          <Card.Title>{service.name}</Card.Title>
-          <Card.Text>{service.description}</Card.Text>
+          <Card.Title>{individualService.name}</Card.Title>
+          <Card.Text>{individualService.description}</Card.Text>
 
           <Accordion>
             <Accordion.Item eventKey="0">
@@ -156,46 +156,58 @@ function ServiceDetailCard({ service }) {
                   ref={formRef}
                   onSubmit={(event) => handleSubmitServiceBooking(event)}
                 >
-                  <label htmlFor="service_category">Service Category: </label>
+                  <label className="form-label" htmlFor="service_category">
+                    Service Category:{" "}
+                  </label>
                   <input
+                    className="form-control"
                     name="service_category"
                     id="service_category"
                     placeholder="Service Category"
-                    value={service.category_name}
+                    value={individualService.category_name}
                     disabled
                   ></input>
                   <input
+                    className="form-control"
                     type="hidden"
                     name="service_category_id"
                     id="service_category_id"
-                    value={service.service_category_id}
+                    value={individualService.service_category_id}
                     disabled
                   ></input>
 
-                  <label htmlFor="service">Service: </label>
+                  <label className="form-label" htmlFor="service">
+                    Service:{" "}
+                  </label>
                   <input
+                    className="form-control"
                     name="service"
                     id="service"
                     placeholder="Service"
-                    value={service.name}
+                    value={individualService.name}
                     disabled
                   />
                   <input
                     type="hidden"
                     name="service_id"
                     id="service_id"
-                    value={service.id}
+                    value={individualService.id}
                     disabled
                   />
 
-                  <label htmlFor="appointment_date">Appointment Date: </label>
+                  <label className="form-label" htmlFor="appointment_date">
+                    Appointment Date:{" "}
+                  </label>
                   <input
+                    className="form-control"
                     name="appointment_date"
                     id="appointment_date"
                     placeholder="Appointment Date"
                   />
 
-                  <label htmlFor="slot">Slot: </label>
+                  <label className="form-label" htmlFor="slot">
+                    Slot:{" "}
+                  </label>
 
                   <div>
                     <select
@@ -203,6 +215,7 @@ function ServiceDetailCard({ service }) {
                       id="slot"
                       value={slotValue}
                       onChange={(e) => handleSlotChange(e)}
+                      className="form-control"
                     >
                       <option value="">Choose your preferrable slot</option>
                       <option value="08:00">08:00</option>
@@ -211,20 +224,26 @@ function ServiceDetailCard({ service }) {
                     </select>
                   </div>
 
-                  <label htmlFor="user_input">Extra comments: </label>
+                  <label className="form-label" htmlFor="user_input">
+                    Extra comments:{" "}
+                  </label>
                   <textarea
                     name="user_input"
                     id="user_input"
                     placeholder="Extra comments..."
+                    className="form-control"
                   />
 
-                  <label htmlFor="uploaded_file_1">Upload File 1: </label>
+                  <label className="form-label" htmlFor="uploaded_file_1">
+                    Upload File 1:{" "}
+                  </label>
                   <input
                     onChange={(event) => setFile1(event.target.files[0])}
                     type="file"
                     name="file"
                     id="uploaded_file_1"
                     accept="image/*"
+                    className="form-control"
                   />
 
                   {/* <label htmlFor="uploaded_file_2">Upload File 2: </label>

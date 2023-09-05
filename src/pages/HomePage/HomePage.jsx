@@ -3,15 +3,18 @@ import HeroCarousel from "../../components/HeroCarousel/HeroCarousel";
 import ServicesList from "../../components/ServicesList/ServicesList";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
+import HeroText from "../../components/HeroText/HeroText";
 
 function HomePage() {
   return (
     <>
-      <div>
-        <HeroCarousel />
-      </div>
+      <Container>
+        <div>
+          <HeroCarousel />
+        </div>
 
-      {/* <div className="homePage__searchbar-container">
+        {/* <div className="homePage__searchbar-container">
         <label className="homePage__searchbar-label" htmlFor="locationSearch">
           Search Based on Location
         </label>
@@ -23,18 +26,26 @@ function HomePage() {
         ></input>
       </div> */}
 
-      <Form className="d-flex">
-        <Form.Control
-          type="search"
-          placeholder="Search"
-          className="me-2"
-          aria-label="Search"
-        />
-        <Button variant="outline-success">Search</Button>
-      </Form>
+        <Form className="d-flex search-form">
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+          />
+          <Button variant="outline-success">Search</Button>
+        </Form>
 
-      <div>
-        <ServicesList />
+        <div>
+          <ServicesList />
+        </div>
+      </Container>
+
+      <div className="container-fluid bg-light">
+        {/* hero-text-section */}
+        <Container>
+          <HeroText />
+        </Container>
       </div>
     </>
   );
