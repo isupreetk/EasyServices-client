@@ -157,12 +157,15 @@ function Header() {
             <Nav.Link as={NavLink} className="header__links" href="/services">
               Services
             </Nav.Link>
-            <Nav.Link as={NavLink} href="/aboutUs">
+            <Nav.Link as={NavLink} className="header__links" href="/bookings">
+              My Bookings
+            </Nav.Link>
+            {/* <Nav.Link as={NavLink} href="/aboutUs">
               About Us
-            </Nav.Link>
-            <Nav.Link as={NavLink} href="/contactUs">
+            </Nav.Link> */}
+            {/* <Nav.Link as={NavLink} href="/contactUs">
               Contact Us
-            </Nav.Link>
+            </Nav.Link> */}
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -180,7 +183,7 @@ function Header() {
 
           <Nav>
             <Nav.Link href="#deets">Sign Up</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link eventKey={2} href="/login">
               Log In
             </Nav.Link>
           </Nav>

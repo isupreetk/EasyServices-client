@@ -11,8 +11,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SupportPage from "./pages/SupportPage/SupportPage";
 import ServiceSchedulingPage from "./pages/ServiceSchedulingPage/ServiceSchedulingPage";
 import ServiceBookedPage from "./pages/ServiceBookedPage/ServiceBookedPage";
-import TestNotificationPage from "./pages/TestNotificationPage/TestNotificationPage";
-import TestMessagePage from "./pages/TestMessagePage/TestMessagePage";
+import ServiceProviderFeed from "./pages/ServiceProviderFeedPage/ServiceProviderFeed";
 
 function App() {
   const api_URL = process.env.REACT_APP_API_URL;
@@ -35,15 +34,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/services" />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/services" element={<HomePage />} />
         <Route path="/services/:id" element={<ServiceSchedulingPage />} />
         <Route path="/bookings" element={<ServiceBookedPage />} />
-        <Route path="/addQuote" element={<AddQuotePage />} />
+        <Route path="/addQuote/:id" element={<AddQuotePage />} />
+        <Route path="/feed" element={<ServiceProviderFeed />} />
 
-        <Route path="/login" element={<LoginPage />} />
         <Route path="/support" element={<SupportPage />} />
-        <Route path="/testNotification" element={<TestNotificationPage />} />
-        <Route path="/testMessage" element={<TestMessagePage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

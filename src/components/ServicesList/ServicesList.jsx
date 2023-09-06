@@ -50,6 +50,7 @@ function ServicesList() {
           {/* {updatedArrayForDisplay?.map((arrayService) => {
             return ( */}
           <div className="row">
+      
             {servicesList?.map((individualService) => {
               return (
                 <div className="col-sm-12 col-md-6 col-lg-4">
