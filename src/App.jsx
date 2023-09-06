@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Header username={user} />
       <Routes>
-        <Route path="/" element={<Navigate to="/services" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage setUserLogin={setUser} />} />
         <Route path="/services" element={<HomePage />} />
         <Route path="/services/:id" element={<ServiceSchedulingPage />} />
