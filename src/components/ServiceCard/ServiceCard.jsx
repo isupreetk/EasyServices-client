@@ -13,12 +13,12 @@ function ServiceCard({ service }) {
     card: {
       "margin-bottom": "1rem",
       "flex-direction": "row",
-      height: "100px",
+      height: "120px",
+      "font-size": "14px",
     },
 
     cardImage: {
-      height: "100px",
-      "max-width": "150px",
+      "max-width": "30%",
       "border-radius": "4px",
     },
   };
