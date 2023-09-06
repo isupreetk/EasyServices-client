@@ -70,7 +70,9 @@ function ServiceDetailCard({ individualService }) {
           <Accordion>
             <Accordion.Item eventKey="0">
               <Accordion.Header>
-                <Button variant="primary">Start Booking</Button>
+                <a className="btn" variant="primary">
+                  Start Booking
+                </a>
               </Accordion.Header>
 
               <Accordion.Body>

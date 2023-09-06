@@ -34,8 +34,8 @@ function ServiceSchedulingPage() {
               <p className="col-md-8 fs-4">
                 {selectedService[0]?.category_description}
               </p>
-              <button className="btn btn-primary btn-lg" type="button">
-                <a href="#services-subcategory" className="button">
+              <button className="btn btn-primary btn-lg">
+                <a href="#services-subcategory" className="servicesButton">
                   See services
                 </a>
               </button>
@@ -46,11 +46,11 @@ function ServiceSchedulingPage() {
             <div className="row">
               {selectedService?.map((individualService) => {
                 return (
-                  <div className="col-sm-12 col-md-6">
-                    <ServiceDetailCard
-                      key={individualService?.id}
-                      individualService={individualService}
-                    />
+                  <div
+                    className="col-sm-12 col-md-6"
+                    key={individualService?.id}
+                  >
+                    <ServiceDetailCard individualService={individualService} />
                   </div>
                 );
               })}

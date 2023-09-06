@@ -7,7 +7,7 @@ function BookingsList({ result, calledFrom }) {
     <Container>
       <div>
         {Object.keys(result).map((user_request_id, index) => (
-          <>
+          <div key={index}>
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">
                 Service Name: {result[user_request_id].detail.name}
@@ -25,9 +25,9 @@ function BookingsList({ result, calledFrom }) {
               <small>Slot: {result[user_request_id].detail.slot}</small>
             </div>
 
-            {result[user_request_id].quotes.map((quote) => {
+            {result[user_request_id].quotes.map((quote, index) => {
               return (
-                <Accordion>
+                <Accordion key={index}>
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>
                       <div className="bookings__accordion-heading">
@@ -53,7 +53,7 @@ function BookingsList({ result, calledFrom }) {
                 </Accordion>
               );
             })}
-          </>
+          </div>
         ))}
       </div>
     </Container>
