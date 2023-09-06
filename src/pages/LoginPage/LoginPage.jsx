@@ -61,15 +61,6 @@ function LoginPage({ setUserLogin }) {
       .catch((err) => console.error(err));
   };
 
-  /*
-   * Logout of application, clears localStorage JWT token and set state to logged out
-   */
-  //   const handleLogout = () => {
-  //     localStorage.removeItem("token");
-  //     setLoggedIn(false);
-  //     setUser({});
-  //   };
-
   return (
     <>
       <div class="p-5 mb-4 bg-light rounded-3">

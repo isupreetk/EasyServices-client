@@ -17,6 +17,15 @@ function Header({ username }) {
     }
   }, [username]);
 
+  /*
+   * Logout of application, clears localStorage JWT token and set state to logged out
+   */
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    setUser("");
+  };
+
   return (
     <Navbar expand="lg" className=" navbar navbar-dark bg-dark">
       <Container fluid className="header__links">
@@ -42,7 +51,7 @@ function Header({ username }) {
           {user ? (
             <Nav>
               <Nav.Link>Welcome, {user}</Nav.Link>
-              <Nav.Link eventKey={2} href="/login">
+              <Nav.Link eventKey={2} href="/login" onClick={handleLogout}>
                 Log Out
               </Nav.Link>
             </Nav>
