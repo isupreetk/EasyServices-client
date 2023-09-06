@@ -11,15 +11,15 @@ function ServiceCard({ service }) {
 
   const styles = {
     card: {
-      "margin-bottom": "1rem",
-      "flex-direction": "row",
+      marginBottom: "1rem",
+      flexDirection: "row",
       height: "120px",
-      "font-size": "14px",
+      fontSize: "14px",
     },
 
     cardImage: {
-      "max-width": "30%",
-      "border-radius": "4px",
+      maxWidth: "30%",
+      borderRadius: "4px",
     },
   };
 

@@ -63,8 +63,8 @@ function LoginPage({ setUserLogin }) {
 
   return (
     <>
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5 col-6">
+      <div className="p-5 mb-4 bg-light rounded-3">
+        <div className="container-fluid py-5 col-6">
           <h1 className="text-center">LOGIN</h1>
           {!loggedIn && user && (
             <form onSubmit={(event) => handleLogin(event)}>

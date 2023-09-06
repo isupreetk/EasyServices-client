@@ -6,11 +6,11 @@ import Company from "../../assets/images/company.png";
 
 function Footer() {
   return (
-    <div class="footer-dark">
+    <div className="footer-dark">
       <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 col-md-3 item text">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6 col-md-3 item text">
               <h3>
                 <a href="/services" className="footer__links">
                   Services
@@ -37,7 +37,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div class="col-sm-6 col-md-3 item text">
+            <div className="col-sm-6 col-md-3 item text">
               <h3>
                 <a href="#heroText" className="footer__links">
                   About
@@ -55,7 +55,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div class="col-md-6 item text">
+            <div className="col-md-6 item text">
               <img src={Company} alt="company name" />
               <p>
                 A trusted solution for hassle-free services. From home
@@ -64,31 +64,31 @@ function Footer() {
                 Say goodbye to uncertainty, hello to convenience!
               </p>
             </div>
-            <div class="col item social">
+            <div className="col item social">
               <a href="www.fb.com">
                 <img
                   src={FacebookIcon}
                   alt="fb"
-                  class="icon ion-social-facebook"
+                  className="icon ion-social-facebook"
                 />
               </a>
               <a href="www.twitter.com">
                 <img
                   src={TwitterIcon}
                   alt="twitter"
-                  class="icon ion-social-twitter"
+                  className="icon ion-social-twitter"
                 />
               </a>
               <a href="www.instagram.com">
                 <img
                   src={InstagramIcon}
                   alt="instagram"
-                  class="icon ion-social-instagram"
+                  className="icon ion-social-instagram"
                 />
               </a>
             </div>
           </div>
-          <p class="copyright">EasyServices © 2023</p>
+          <p className="copyright">EasyServices © 2023</p>
         </div>
       </footer>
     </div>

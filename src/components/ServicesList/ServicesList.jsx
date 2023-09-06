@@ -27,11 +27,11 @@ function ServicesList() {
           <div className="row">
             {servicesList?.map((individualService) => {
               return (
-                <div className="col-sm-12 col-md-6 col-lg-4">
-                  <ServiceCard
-                    key={individualService.id}
-                    service={individualService}
-                  />
+                <div
+                  className="col-sm-12 col-md-6 col-lg-4"
+                  key={individualService.id}
+                >
+                  <ServiceCard service={individualService} />
                 </div>
               );
             })}

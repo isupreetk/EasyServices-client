@@ -26,8 +26,8 @@ function SignUpPage() {
 
   return (
     <>
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5 col-6">
+      <div className="p-5 mb-4 bg-light rounded-3">
+        <div className="container-fluid py-5 col-6">
           <h1 className="text-center">SIGN UP</h1>
 
           <form onSubmit={(event) => handleLogin(event)}>
