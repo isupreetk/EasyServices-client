@@ -6,7 +6,7 @@ import "./HeroText.scss";
 
 function HeroText() {
   return (
-    <div className="row hero-section">
+    <div className="row hero-section" id="heroText">
       <div className="col-sm-12 col-md-6 column column--left">
         <h3 className="column__headline">Why choose EasyServices?</h3>
 

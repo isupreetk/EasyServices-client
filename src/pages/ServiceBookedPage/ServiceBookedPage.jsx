@@ -1,4 +1,3 @@
-import "./ServiceBookedPage.scss";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import axios from "axios";

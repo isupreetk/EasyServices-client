@@ -1,4 +1,3 @@
-import "./AddQuotePage.scss";
 import { Button, Container } from "react-bootstrap";
 import { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -9,11 +8,9 @@ function AddQuotePage({ individualService }) {
   const react_URL = `${process.env.REACT_APP_URL}`;
 
   const formRef = useRef();
-  const [file1, setFile1] = useState("");
   const [selectedTask, setSelectedTask] = useState([]);
 
   const { id } = useParams();
-  // console.log("params", id);
 
   function componentDidMount() {
     if (!("Notification" in window)) {
@@ -42,14 +39,13 @@ function AddQuotePage({ individualService }) {
     axios
       .get(`${api_URL}/addQuote/${id}`)
       .then((response) => {
-        // console.log(response.data);
         setSelectedTask(response.data);
         componentDidMount();
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [api_URL, id]);
 
   const handleSubmitQuote = (event) => {
     event.preventDefault();

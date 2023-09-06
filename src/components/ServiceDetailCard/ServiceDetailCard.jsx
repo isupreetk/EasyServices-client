@@ -1,7 +1,5 @@
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import CardImage from "../../assets/images/dark_background.jpeg";
-import "./ServiceDetailCard.scss";
 import Accordion from "react-bootstrap/Accordion";
 import { useState, useRef } from "react";
 import axios from "axios";
@@ -12,31 +10,15 @@ function ServiceDetailCard({ individualService }) {
   const navigate = useNavigate();
   const [slotValue, setSlotValue] = useState("");
   const [file1, setFile1] = useState("");
-  //   const [file2, setFile2] = useState("");
-  //   const [file3, setFile3] = useState("");
 
   const formRef = useRef();
 
   const handleSlotChange = (e) => {
     setSlotValue(e.target.value);
-    // console.log(`You selected ${e.target.value}`);
   };
 
   const handleSubmitServiceBooking = (event) => {
     event.preventDefault();
-
-    // navigate(`/schedule/${service.id}`)
-
-    /* to upload images */
-
-    // const fileResult = axios.post('/api/images', formData, { headers: {'Content-Type': 'multipart/form-data'}});
-    // console.log(fileResult.data);
-
-    // console.log("file1", file1);
-    // console.log("file2", file2);
-    // console.log("file3", file3);
-
-    // console.log("formdata",formData);
 
     axios
       .post(`${api_URL}/schedule`, {
@@ -48,35 +30,10 @@ function ServiceDetailCard({ individualService }) {
         user_input: `${event.target.user_input.value}`,
       })
       .then((response) => {
-        // console.log("schedule data", response.data);
-
-        // const formImagesData = [];
-
-        // if (file1) {
-        //     formImagesData.push(file1.name);
-        // }
-        // if (file2) {
-        //     formImagesData.push(file2.name);
-        // }
-        // if (file3) {
-        //     formImagesData.push(file3.name);
-        // }
-
-        // if (file1) {
         if (file1) {
           const formData = new FormData();
-
-          //   console.log("file1.file", file1);
-          //   console.log("response.data[0]", response.data[0]);
-
           formData.append("file", file1);
           formData.append("user_request_id", response.data[0]);
-
-          // formData cannot be logged.. use this instead to view details of formData
-
-          // for (let key of formData.entries()) {
-          //   console.log(key);
-          // }
 
           const config = {
             headers: {
@@ -95,42 +52,7 @@ function ServiceDetailCard({ individualService }) {
             });
         }
 
-        // }
-
-        // if (formImagesData.length > 0) {
-        //     const result =
-        //         formImagesData.map((formImage) => {
-        //             return ({
-        //                 user_request_id: response.data[0],
-        //                 file_URL: `${formImage}`,
-        //             })
-        //         })
-
-        //     return (axios.post(`${api_URL}/scheduleImage`, result).then((response) => {
-        //         console.log(response.data);
-        //     })
-        //         .catch((error) => {
-        //             console.log(error)
-        //         })
-        //     )
-        // }
-
         formRef.current.reset();
-
-        // [{
-        //     user_request_id: response.data[0],
-        //     file_URL: `${file1}`,
-        // },
-        // {
-        //     user_request_id: response.data[0],
-        //     file_URL: `${file2}`,
-        // },
-        // {
-        //     user_request_id: response.data[0],
-        //     file_URL: `${file3}`,
-        // }]
-
-        // ))
       })
       .catch((error) => {
         console.log(error);
@@ -245,23 +167,6 @@ function ServiceDetailCard({ individualService }) {
                     accept="image/*"
                     className="form-control"
                   />
-
-                  {/* <label htmlFor="uploaded_file_2">Upload File 2: </label>
-                  <input
-                    onChange={(event) => setFile2(event.target.files[0])}
-                    type="file"
-                    name="uploaded_file_2"
-                    id="uploaded_file_2"
-                  />
-
-                  <label htmlFor="uploaded_file_3">Upload File 3: </label>
-                  <input
-                    onChange={(event) => setFile3(event.target.files[0])}
-                    type="file"
-                    name="uploaded_file_3"
-                    id="uploaded_file_3"
-                  /> */}
-
                   <Button type="submit" variant="primary">
                     Book Now
                   </Button>

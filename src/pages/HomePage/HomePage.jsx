@@ -14,18 +14,6 @@ function HomePage() {
           <HeroCarousel />
         </div>
 
-        {/* <div className="homePage__searchbar-container">
-        <label className="homePage__searchbar-label" htmlFor="locationSearch">
-          Search Based on Location
-        </label>
-        <input
-          className="homePage__searchbar-input"
-          type="text"
-          name="locationSearch"
-          placeholder="Search based on your location"
-        ></input>
-      </div> */}
-
         <Form className="d-flex search-form">
           <Form.Control
             type="search"
@@ -42,7 +30,6 @@ function HomePage() {
       </Container>
 
       <div className="container-fluid bg-light">
-        {/* hero-text-section */}
         <Container>
           <HeroText />
         </Container>

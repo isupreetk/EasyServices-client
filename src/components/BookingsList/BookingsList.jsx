@@ -7,8 +7,6 @@ function BookingsList({ result, calledFrom }) {
     <Container>
       <div>
         {Object.keys(result).map((user_request_id, index) => (
-          // <div className="list-group-numbered " key={index}>
-          //   <div className="list-group-item list-group-item-action flex-column align-items-start">
           <>
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">
@@ -56,8 +54,6 @@ function BookingsList({ result, calledFrom }) {
               );
             })}
           </>
-          //   </div>
-          // </div>
         ))}
       </div>
     </Container>

@@ -1,6 +1,5 @@
 import "./App.scss";
-import axios from "axios";
-// import { useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Header from "./components/Header/Header";
@@ -14,33 +13,19 @@ import ServiceBookedPage from "./pages/ServiceBookedPage/ServiceBookedPage";
 import ServiceProviderFeed from "./pages/ServiceProviderFeedPage/ServiceProviderFeed";
 
 function App() {
-  const api_URL = process.env.REACT_APP_API_URL;
-
-  // console.log("api_URL", api_URL);
-
-  // useEffect(() => {
-  axios
-    .get(`${api_URL}`)
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  // }, []);
+  const [user, setUser] = useState("");
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header username={user} />
       <Routes>
         <Route path="/" element={<Navigate to="/services" />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage setUserLogin={setUser} />} />
         <Route path="/services" element={<HomePage />} />
         <Route path="/services/:id" element={<ServiceSchedulingPage />} />
         <Route path="/bookings" element={<ServiceBookedPage />} />
         <Route path="/addQuote/:id" element={<AddQuotePage />} />
         <Route path="/feed" element={<ServiceProviderFeed />} />
-
         <Route path="/support" element={<SupportPage />} />
       </Routes>
       <Footer />

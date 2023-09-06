@@ -1,4 +1,3 @@
-import "./ServiceProviderFeed.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +17,7 @@ function ServiceProviderFeed() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [api_URL]);
 
   const handleSeeMoreClick = (id) => {
     navigate(`/addQuote/${id}`);
@@ -31,7 +30,6 @@ function ServiceProviderFeed() {
         {feed?.map((feedItem) => {
           return (
             <Card className="col-6" key={feedItem.id}>
-              {/* <Card.Img></Card.Img> */}
               <Card.Body>
                 <Card.Title>{feedItem.service_category_id}</Card.Title>
                 <Card.Text>
