@@ -57,7 +57,7 @@ function Header({ username }) {
             </Nav>
           ) : (
             <Nav>
-              {/* <Nav.Link>Sign Up</Nav.Link> */}
+              <Nav.Link href="/signUp">Sign Up</Nav.Link>
               <Nav.Link eventKey={2} href="/login">
                 Log In
               </Nav.Link>
