@@ -22,12 +22,14 @@ function ServiceBookedPage() {
               quotes: [],
             };
           }
-          userRequestData[userRequest.user_request_id].quotes.push({
-            amount: userRequest.amount,
-            service_provider_name: userRequest.firstname,
-            estimated_duration: userRequest.estimated_duration,
-            description: userRequest.description,
-          });
+          if (userRequest.amount) {
+            userRequestData[userRequest.user_request_id].quotes.push({
+              amount: userRequest.amount,
+              service_provider_name: userRequest.firstname,
+              estimated_duration: userRequest.estimated_duration,
+              description: userRequest.description,
+            });
+          }
         });
         setInProgressResult(userRequestData);
       })
