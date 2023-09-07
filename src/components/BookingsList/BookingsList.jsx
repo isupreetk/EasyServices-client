@@ -1,6 +1,7 @@
 import "./BookingsList.scss";
 import Accordion from "react-bootstrap/Accordion";
 import { Button, Container } from "react-bootstrap";
+import { format } from "date-fns";
 
 function BookingsList({ result, calledFrom }) {
   return (
@@ -19,8 +20,16 @@ function BookingsList({ result, calledFrom }) {
 
             <div className="d-flex w-100 justify-content-between">
               <small>
-                Appointment Date:{" "}
-                {result[user_request_id].detail.appointment_date}
+                Appointment Date:
+                {/* {result[user_request_id].detail.appointment_date} */}
+                {format(
+                  new Date(
+                    result[user_request_id].detail.appointment_date
+                      .toString()
+                      .slice(0, -1)
+                  ),
+                  "MMMM do yyyy, h:mm:ss a"
+                )}
               </small>
               <small>Slot: {result[user_request_id].detail.slot}</small>
             </div>
