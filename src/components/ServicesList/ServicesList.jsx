@@ -23,6 +23,7 @@ function ServicesList({ searchString }) {
       .get(`${process.env.REACT_APP_API_URL}/services`)
       .then((response) => {
         if (searchString !== "") {
+          // eslint-disable-next-line
           let filteredServicesList = servicesList.filter((service) => {
             if (service.category_name.includes(searchString)) {
               return service;
@@ -38,7 +39,7 @@ function ServicesList({ searchString }) {
       .catch((error) => {
         console.log(error);
       });
-  }, [searchString]);
+  }, [servicesList, searchString]);
 
   return (
     <>
