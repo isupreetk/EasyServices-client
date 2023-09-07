@@ -5,23 +5,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import HeroText from "../../components/HeroText/HeroText";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function HomePage() {
-  const [servicesList, setServicesList] = useState([]);
   const [searchString, setSearchString] = useState("");
-
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/services`)
-      .then((response) => {
-        setServicesList(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -46,7 +33,6 @@ function HomePage() {
             aria-label="Search"
             name="search"
             id="search"
-            // onChange={() => setSearchString(searchString)}
           />
           <Button type="submit" variant="outline-success">
             Search
