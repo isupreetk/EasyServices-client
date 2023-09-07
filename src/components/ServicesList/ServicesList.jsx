@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import Container from "react-bootstrap/Container";
 
-function ServicesList() {
+function ServicesList({ searchString }) {
   const [servicesList, setServicesList] = useState([]);
 
   useEffect(() => {
@@ -17,6 +17,28 @@ function ServicesList() {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/services`)
+      .then((response) => {
+        if (searchString !== "") {
+          let filteredServicesList = servicesList.filter((service) => {
+            if (service.category_name.includes(searchString)) {
+              return service;
+            }
+          });
+          if (filteredServicesList.length !== 0) {
+            setServicesList(filteredServicesList);
+          }
+        } else {
+          setServicesList(response.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [searchString]);
 
   return (
     <>
