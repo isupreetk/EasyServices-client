@@ -180,7 +180,7 @@ function AddQuotePage({ individualService }) {
                 variant="primary"
                 onClick={showNotification}
               >
-                Book Now
+                Add Quote
               </Button>
             </form>
           </div>
