@@ -44,8 +44,15 @@ function Header({ username }) {
             <Nav.Link as={NavLink} className="header__links" href="/services">
               Services
             </Nav.Link>
-            <Nav.Link as={NavLink} className="header__links" href="/bookings">
-              My Bookings
+            {user ? (
+              <Nav.Link as={NavLink} className="header__links" href="/bookings">
+                My Bookings
+              </Nav.Link>
+            ) : (
+              <Nav.Link></Nav.Link>
+            )}
+            <Nav.Link as={NavLink} className="header__links" href="/support">
+              Support
             </Nav.Link>
           </Nav>
           {user ? (
