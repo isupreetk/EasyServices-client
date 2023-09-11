@@ -6,7 +6,7 @@ import Company from "../../assets/images/company.png";
 
 function Footer() {
   return (
-    <div className="footer-dark">
+    <div className="footer-dark footer__section">
       <footer>
         <div className="container">
           <div className="row">

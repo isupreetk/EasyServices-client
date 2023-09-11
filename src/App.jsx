@@ -19,17 +19,19 @@ function App() {
   return (
     <BrowserRouter>
       <Header username={user} />
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/signUp" element={<SignUpPage />} />
-        <Route path="/login" element={<LoginPage setUserLogin={setUser} />} />
-        <Route path="/services" element={<HomePage />} />
-        <Route path="/services/:id" element={<ServiceSchedulingPage />} />
-        <Route path="/bookings" element={<ServiceBookedPage />} />
-        <Route path="/addQuote/:id" element={<AddQuotePage />} />
-        <Route path="/feed" element={<ServiceProviderFeed />} />
-        <Route path="/support" element={<SupportPage />} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/signUp" element={<SignUpPage />} />
+          <Route path="/login" element={<LoginPage setUserLogin={setUser} />} />
+          <Route path="/services" element={<HomePage />} />
+          <Route path="/services/:id" element={<ServiceSchedulingPage />} />
+          <Route path="/bookings" element={<ServiceBookedPage />} />
+          <Route path="/addQuote/:id" element={<AddQuotePage />} />
+          <Route path="/feed" element={<ServiceProviderFeed />} />
+          <Route path="/support" element={<SupportPage />} />
+        </Routes>
+      </div>
       <Footer />
     </BrowserRouter>
   );

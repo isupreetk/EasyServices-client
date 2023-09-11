@@ -99,4 +99,13 @@
     color: #f0f9ff;
     padding-bottom: 1rem;
   }
+
+  &__section {
+    position: absolute;
+    right: 0;
+    bottom: -48rem;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+  }
 }
