@@ -8,7 +8,7 @@ function BookingsList({ result, calledFrom }) {
     <Container>
       <div>
         {Object.keys(result).map((user_request_id, index) => (
-          <div key={index}>
+          <div key={index} className="bookings__wrapper">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">
                 Service Name: {result[user_request_id].detail.name}
@@ -21,7 +21,6 @@ function BookingsList({ result, calledFrom }) {
             <div className="d-flex w-100 justify-content-between">
               <small>
                 Appointment Date:
-                {/* {result[user_request_id].detail.appointment_date} */}
                 {format(
                   new Date(
                     result[user_request_id].detail.appointment_date
@@ -36,7 +35,7 @@ function BookingsList({ result, calledFrom }) {
 
             {result[user_request_id].quotes.map((quote, index) => {
               return (
-                <Accordion key={index}>
+                <Accordion key={index} className="bookings__accordion">
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>
                       <div className="bookings__accordion-heading">

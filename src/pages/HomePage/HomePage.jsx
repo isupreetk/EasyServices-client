@@ -33,6 +33,7 @@ function HomePage() {
             aria-label="Search"
             name="search"
             id="search"
+            // onChange={(event) => setSearchString(event.target.search.value)}
           />
           <Button type="submit" variant="outline-success">
             Search

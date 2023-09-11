@@ -65,21 +65,21 @@ function Footer() {
               </p>
             </div>
             <div className="col item social">
-              <a href="www.fb.com">
+              <a href="https://www.fb.com/">
                 <img
                   src={FacebookIcon}
                   alt="fb"
                   className="icon ion-social-facebook"
                 />
               </a>
-              <a href="www.twitter.com">
+              <a href="https://www.twitter.com/">
                 <img
                   src={TwitterIcon}
                   alt="twitter"
                   className="icon ion-social-twitter"
                 />
               </a>
-              <a href="www.instagram.com">
+              <a href="https://www.instagram.com/">
                 <img
                   src={InstagramIcon}
                   alt="instagram"
