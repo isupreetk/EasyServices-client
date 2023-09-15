@@ -86,16 +86,6 @@ function LoginPage({ setUserLogin }) {
                   placeholder="Password"
                 />
               </div>
-              <div className="form-group form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="checkbox"
-                />
-                <label className="form-check-label" htmlFor="checkbox">
-                  Keep me signed in
-                </label>
-              </div>
               <button type="submit" className="btn btn-primary">
                 Sign In
               </button>

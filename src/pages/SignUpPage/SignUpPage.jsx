@@ -9,13 +9,22 @@ function SignUpPage() {
    */
   const handleLogin = (event) => {
     event.preventDefault();
+
+    if (event.target.checkbox.checked) {
+      event.target.checkbox.value = true;
+    } else {
+      event.target.checkbox.value = false;
+    }
+
     console.log(event.target.username.value);
     console.log(event.target.password.value);
+    console.log(event.target.checkbox.value);
 
     axios
       .post(`${api_URL}/signUp`, {
         username: event.target.username.value,
         password: event.target.password.value,
+        service_provider: event.target.checkbox.value,
       })
       .then((response) => {
         alert("Sign Up Successful! Please proceed to login! ");
@@ -49,6 +58,19 @@ function SignUpPage() {
                 placeholder="Password"
               />
             </div>
+
+            <div className="form-group form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="checkbox"
+                value="false"
+              />
+              <label className="form-check-label" htmlFor="checkbox">
+                Are you a service provider?
+              </label>
+            </div>
+
             <button type="submit" className="btn btn-primary">
               Sign Up
             </button>
