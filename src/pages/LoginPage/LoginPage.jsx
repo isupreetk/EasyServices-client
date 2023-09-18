@@ -29,7 +29,7 @@ function LoginPage({ setUserLogin }) {
         })
         .catch((err) => console.error(err));
     }
-  }, []);
+  }, [api_URL]);
 
   /*
    * Login with username and password, creates JWT token saved in localStorage to persist login
