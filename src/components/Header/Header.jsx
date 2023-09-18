@@ -53,7 +53,7 @@ function Header({ username }) {
                 Feed
               </Nav.Link>
             )}
-            {user ? (
+            {user && !serviceProvider ? (
               <Nav.Link as={NavLink} className="header__links" href="/bookings">
                 My Bookings
               </Nav.Link>
