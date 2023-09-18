@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage({ setUserLogin }) {
-  const api_URL = `${process.env.REACT_APP_API_URL}`;
   const navigate = useNavigate();
 
   const [user, setUser] = useState({});
@@ -16,6 +15,8 @@ function LoginPage({ setUserLogin }) {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const api_URL = `${process.env.REACT_APP_API_URL}`;
+
     if (token) {
       axios
         .get(`${api_URL}/protected`, {
@@ -29,13 +30,14 @@ function LoginPage({ setUserLogin }) {
         })
         .catch((err) => console.error(err));
     }
-  }, [api_URL]);
+  }, []);
 
   /*
    * Login with username and password, creates JWT token saved in localStorage to persist login
    */
   const handleLogin = (event) => {
     event.preventDefault();
+    const api_URL = `${process.env.REACT_APP_API_URL}`;
 
     axios
       .post(`${api_URL}/login`, {
