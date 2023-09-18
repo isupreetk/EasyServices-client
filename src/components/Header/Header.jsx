@@ -44,16 +44,16 @@ function Header({ username }) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }}>
-            {!serviceProvider ? (
-              <Nav.Link as={NavLink} className="header__links" href="/services">
-                Services
-              </Nav.Link>
-            ) : (
+            {serviceProvider === "true" ? (
               <Nav.Link as={NavLink} className="header__links" href="/feed">
                 Feed
               </Nav.Link>
+            ) : (
+              <Nav.Link as={NavLink} className="header__links" href="/services">
+                Services
+              </Nav.Link>
             )}
-            {user && !serviceProvider ? (
+            {user && serviceProvider === "false" ? (
               <Nav.Link as={NavLink} className="header__links" href="/bookings">
                 My Bookings
               </Nav.Link>
