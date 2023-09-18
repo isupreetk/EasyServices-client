@@ -13,6 +13,7 @@ function LoginPage({ setUserLogin }) {
   /*
    * Component Mount, if JWT token is set the user is still considered logged in
    */
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -28,15 +29,13 @@ function LoginPage({ setUserLogin }) {
         })
         .catch((err) => console.error(err));
     }
-  }, [api_URL]);
+  }, []);
 
   /*
    * Login with username and password, creates JWT token saved in localStorage to persist login
    */
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log(event.target.username.value);
-    console.log(event.target.password.value);
 
     axios
       .post(`${api_URL}/login`, {
@@ -44,8 +43,13 @@ function LoginPage({ setUserLogin }) {
         password: event.target.password.value,
       })
       .then((response) => {
-        localStorage.setItem("token", response.data.token); // save token in localStorage
+        // save token, username and service_provider in localStorage
+        localStorage.setItem("token", response.data.token);
         localStorage.setItem("username", response.data.username);
+        localStorage.setItem(
+          "service_provider",
+          response.data.service_provider
+        );
         return axios.get(`${api_URL}/protected`, {
           headers: {
             Authorization: response.data.token,
@@ -53,6 +57,7 @@ function LoginPage({ setUserLogin }) {
         });
       })
       .then((response) => {
+        console.log("user", response.data.user);
         setLoggedIn(true);
         setUser(response.data.user);
         setUserLogin(response.data.user);

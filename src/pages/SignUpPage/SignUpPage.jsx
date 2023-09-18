@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function SignUpPage() {
   const navigate = useNavigate();
   const api_URL = process.env.REACT_APP_API_URL;
+  
   /*
    * Login with username and password, creates JWT token saved in localStorage to persist login
    */
@@ -15,10 +16,6 @@ function SignUpPage() {
     } else {
       event.target.checkbox.value = false;
     }
-
-    console.log(event.target.username.value);
-    console.log(event.target.password.value);
-    console.log(event.target.checkbox.value);
 
     axios
       .post(`${api_URL}/signUp`, {

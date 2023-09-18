@@ -17,12 +17,15 @@ function Header({ username }) {
     }
   }, [username]);
 
+  const serviceProvider = localStorage.getItem("service_provider");
+
   /*
    * Logout of application, clears localStorage JWT token and set state to logged out
    */
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
+    localStorage.removeItem("service_provider");
     setUser("");
   };
 
@@ -41,9 +44,15 @@ function Header({ username }) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }}>
-            <Nav.Link as={NavLink} className="header__links" href="/services">
-              Services
-            </Nav.Link>
+            {!serviceProvider ? (
+              <Nav.Link as={NavLink} className="header__links" href="/services">
+                Services
+              </Nav.Link>
+            ) : (
+              <Nav.Link as={NavLink} className="header__links" href="/feed">
+                Feed
+              </Nav.Link>
+            )}
             {user ? (
               <Nav.Link as={NavLink} className="header__links" href="/bookings">
                 My Bookings
