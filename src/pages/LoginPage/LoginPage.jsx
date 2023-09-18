@@ -1,6 +1,7 @@
 import "./LoginPage.scss";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+// useEffect
 import { useNavigate } from "react-router-dom";
 
 function LoginPage({ setUserLogin }) {
@@ -14,22 +15,22 @@ function LoginPage({ setUserLogin }) {
    * Component Mount, if JWT token is set the user is still considered logged in
    */
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      axios
-        .get(`${api_URL}/protected`, {
-          headers: {
-            Authorization: token,
-          },
-        })
-        .then((response) => {
-          setLoggedIn(true);
-          setUser(response.data.user);
-        })
-        .catch((err) => console.error(err));
-    }
-  }, [api_URL]);
+  // useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    axios
+      .get(`${api_URL}/protected`, {
+        headers: {
+          Authorization: token,
+        },
+      })
+      .then((response) => {
+        setLoggedIn(true);
+        setUser(response.data.user);
+      })
+      .catch((err) => console.error(err));
+  }
+  // }, []);
 
   /*
    * Login with username and password, creates JWT token saved in localStorage to persist login
