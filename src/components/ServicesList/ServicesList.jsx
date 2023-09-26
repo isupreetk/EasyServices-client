@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 
 function ServicesList({ searchString }) {
   const [servicesList, setServicesList] = useState([]);
+  const [filteredServicesList, setFilteredServicesList] = useState([]);
 
   useEffect(() => {
     axios
@@ -16,30 +17,66 @@ function ServicesList({ searchString }) {
       .catch((error) => {
         console.log(error);
       });
+    // .then((response) => {
+    //   if (searchString !== "") {
+    //     // eslint-disable-next-line
+    //     let filteredServicesList = servicesList.filter((service) => {
+    //       if (service.category_name.includes(searchString)) {
+    //         return service;
+    //       }
+    //     });
+    //     if (filteredServicesList.length !== 0) {
+    //       setServicesList(filteredServicesList);
+    //     }
+    //   } else {
+    //     setServicesList(response.data);
+    //   }
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // });
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/services`)
-      .then((response) => {
-        if (searchString !== "") {
-          // eslint-disable-next-line
-          let filteredServicesList = servicesList.filter((service) => {
-            if (service.category_name.includes(searchString)) {
-              return service;
-            }
-          });
-          if (filteredServicesList.length !== 0) {
-            setServicesList(filteredServicesList);
-          }
-        } else {
-          setServicesList(response.data);
+    if (searchString !== "") {
+      // eslint-disable-next-line
+      let newServicesList = servicesList.filter((service) => {
+        if (service.category_name.includes(searchString)) {
+          return service;
         }
-      })
-      .catch((error) => {
-        console.log(error);
       });
-  }, [servicesList, searchString]);
+      if (newServicesList.length !== 0) {
+        setFilteredServicesList(newServicesList);
+      } else {
+        setFilteredServicesList([]);
+      }
+    } else {
+      setFilteredServicesList(servicesList);
+    }
+  }, [searchString, servicesList]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_API_URL}/services`)
+  //     .then((response) => {
+  //       if (searchString !== "") {
+  //         // eslint-disable-next-line
+  //         let filteredServicesList = servicesList.filter((service) => {
+  //           if (service.category_name.includes(searchString)) {
+  //             return service;
+  //           }
+  //         });
+  //         if (filteredServicesList.length !== 0) {
+  //           setServicesList(filteredServicesList);
+  //         }
+  //       } else {
+  //         setServicesList(response.data);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, [searchString]);
 
   return (
     <>
@@ -48,7 +85,7 @@ function ServicesList({ searchString }) {
       <section className="services-list">
         <Container>
           <div className="row">
-            {servicesList?.map((individualService) => {
+            {filteredServicesList?.map((individualService) => {
               return (
                 <div
                   className="col-sm-12 col-md-6 col-lg-4"
