@@ -41,7 +41,11 @@ function ServicesList({ searchString }) {
     if (searchString !== "") {
       // eslint-disable-next-line
       let newServicesList = servicesList.filter((service) => {
-        if (service.category_name.includes(searchString)) {
+        if (
+          service.category_name
+            .toLowerCase()
+            .includes(searchString.toLowerCase())
+        ) {
           return service;
         }
       });
