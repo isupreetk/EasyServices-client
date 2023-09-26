@@ -17,24 +17,6 @@ function ServicesList({ searchString }) {
       .catch((error) => {
         console.log(error);
       });
-    // .then((response) => {
-    //   if (searchString !== "") {
-    //     // eslint-disable-next-line
-    //     let filteredServicesList = servicesList.filter((service) => {
-    //       if (service.category_name.includes(searchString)) {
-    //         return service;
-    //       }
-    //     });
-    //     if (filteredServicesList.length !== 0) {
-    //       setServicesList(filteredServicesList);
-    //     }
-    //   } else {
-    //     setServicesList(response.data);
-    //   }
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // });
   }, []);
 
   useEffect(() => {

@@ -2,18 +2,12 @@ import "./HomePage.scss";
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel";
 import ServicesList from "../../components/ServicesList/ServicesList";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import HeroText from "../../components/HeroText/HeroText";
 import { useState } from "react";
 
 function HomePage() {
   const [searchString, setSearchString] = useState("");
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    setSearchString(event.target.search.value);
-  };
 
   return (
     <>
@@ -22,10 +16,7 @@ function HomePage() {
           <HeroCarousel />
         </div>
 
-        <Form
-          className="d-flex search-form"
-          onSubmit={(event) => handleSearch(event)}
-        >
+        <Form className="d-flex search-form">
           <Form.Control
             type="search"
             placeholder="Search"
@@ -33,11 +24,10 @@ function HomePage() {
             aria-label="Search"
             name="search"
             id="search"
-            // onChange={(event) => setSearchString(event.target.search.value)}
+            onChange={(event) => {
+              setSearchString(event.target.value);
+            }}
           />
-          <Button type="submit" variant="outline-success">
-            Search
-          </Button>
         </Form>
 
         <div>
