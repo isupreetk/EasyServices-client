@@ -45,38 +45,11 @@ function ServicesList({ searchString }) {
           return service;
         }
       });
-      if (newServicesList.length !== 0) {
-        setFilteredServicesList(newServicesList);
-      } else {
-        setFilteredServicesList([]);
-      }
+      setFilteredServicesList(newServicesList);
     } else {
       setFilteredServicesList(servicesList);
     }
   }, [searchString, servicesList]);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/services`)
-  //     .then((response) => {
-  //       if (searchString !== "") {
-  //         // eslint-disable-next-line
-  //         let filteredServicesList = servicesList.filter((service) => {
-  //           if (service.category_name.includes(searchString)) {
-  //             return service;
-  //           }
-  //         });
-  //         if (filteredServicesList.length !== 0) {
-  //           setServicesList(filteredServicesList);
-  //         }
-  //       } else {
-  //         setServicesList(response.data);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, [searchString]);
 
   return (
     <>
