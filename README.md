@@ -16,10 +16,14 @@ Whenever a service provider shows interest in any task, the user receives a noti
 
 ### Installation and Setup
 
-Clone down this repository. You will need node and npm installed globally on your machine.
+Clone down this repository + the [server repository here](https://github.com/isupreetk/EasyServices-server). You will need node and npm installed globally on your machine.
 
 Installation: npm install
 
-To Start Server: npm start
+To Start: npm start
 
 To Visit App: localhost:3000/login
+
+### Deployment
+
+The application is deployed using Netlify + Heroku for the front-end and back-end respectively. [Access it here.](https://easyservices.netlify.app/login)
