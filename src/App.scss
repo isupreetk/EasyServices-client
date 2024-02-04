@@ -4,4 +4,6 @@
     padding-bottom: 4rem;
     min-height: 100%;
     // font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    --bs-bg-opacity: 1;
 }
