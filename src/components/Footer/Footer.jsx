@@ -60,8 +60,8 @@ function Footer() {
               <p>
                 A trusted solution for hassle-free services. From home
                 maintenance to beauty treatments and expert consultations, this
-                application will connect the user with verified professionals.
-                Say goodbye to uncertainty, hello to convenience!
+                application connects the user with verified professionals. Say
+                goodbye to uncertainty, hello to convenience!
               </p>
             </div>
             <div className="col item social">
