@@ -1,0 +1,27 @@
+.sign-up {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    &__username {
+        margin-bottom: 1rem;
+    }
+
+    &__password {
+        margin-bottom: 0.5rem;
+    }
+
+    &__check {
+        margin-bottom: 0.5rem;
+    }
+
+    &__button {
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+        border-radius: 4px;
+        width: 100%;
+        color: #fff;
+    }
+}

@@ -1,10 +1,11 @@
+import "./SignUpPage.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function SignUpPage() {
   const navigate = useNavigate();
   const api_URL = process.env.REACT_APP_API_URL;
-  
+
   /*
    * Login with username and password, creates JWT token saved in localStorage to persist login
    */
@@ -34,11 +35,11 @@ function SignUpPage() {
     <>
       <div className="p-5 mb-4 bg-light rounded-3">
         <div className="container-fluid py-5 col-6">
-          <h1 className="text-center">SIGN UP</h1>
+          {/* <h1 className="text-center">SIGN UP</h1> */}
 
           <form onSubmit={(event) => handleLogin(event)}>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
+            <div className="form-group sign-up__username">
+              <label htmlFor="username">Username:</label>
               <input
                 type="text"
                 className="form-control"
@@ -46,17 +47,17 @@ function SignUpPage() {
                 placeholder="Enter username"
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
+            <div className="form-group sign-up__password">
+              <label htmlFor="password">Password:</label>
               <input
                 type="password"
                 className="form-control"
                 id="password"
-                placeholder="Password"
+                placeholder="Enter password"
               />
             </div>
 
-            <div className="form-group form-check">
+            <div className="form-group form-check sign-up__check">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -68,8 +69,8 @@ function SignUpPage() {
               </label>
             </div>
 
-            <button type="submit" className="btn btn-primary">
-              Sign Up
+            <button type="submit" className="sign-up__button">
+              Create a new account
             </button>
           </form>
         </div>
