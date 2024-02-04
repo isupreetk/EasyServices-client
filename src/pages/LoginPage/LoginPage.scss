@@ -1,18 +1,25 @@
 .login {
-    background-color: black;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    height: 100%;
-    width: 100%;
+    flex-direction: column;
 
-    &__form {
+    &__username {
+        margin-bottom: 1rem;
+    }
+
+    &__password {
+        margin-bottom: 1rem;
+    }
+
+    &__button {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: fit-content;
-        background-color: bisque;
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
         border-radius: 4px;
+        width: 100%;
+        color: #fff;
     }
 }

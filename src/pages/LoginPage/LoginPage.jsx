@@ -72,11 +72,11 @@ function LoginPage({ setUserLogin }) {
     <>
       <div className="p-5 mb-4 bg-light rounded-3">
         <div className="container-fluid py-5 col-6">
-          <h1 className="text-center">LOGIN</h1>
+          {/* <h1 className="text-center">LOGIN</h1> */}
           {!loggedIn && user && (
             <form onSubmit={(event) => handleLogin(event)}>
-              <div className="form-group">
-                <label htmlFor="username">Username</label>
+              <div className="form-group login__username">
+                <label htmlFor="username">Username:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -84,17 +84,17 @@ function LoginPage({ setUserLogin }) {
                   placeholder="Enter username"
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
+              <div className="form-group login__password">
+                <label htmlFor="password">Password:</label>
                 <input
                   type="password"
                   className="form-control"
                   id="password"
-                  placeholder="Password"
+                  placeholder="Enter password"
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
-                Sign In
+              <button type="submit" className="login__button">
+                Login
               </button>
             </form>
           )}
