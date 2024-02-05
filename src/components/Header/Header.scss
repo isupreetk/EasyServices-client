@@ -1,3 +1,43 @@
-.header__links {
-    color: white !important;
+.header {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity));
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
+
+    &__logo-container {
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 1.5rem;
+    }
+
+    &__logo {
+        max-height: 35px;
+    }
+
+    &__logo-name {
+        max-height: 30px;
+    }
+
+    &__links-container {
+        width: 50%;
+    }
+
+    &__links {
+        color: white;
+        text-decoration: none;
+        margin-right: 0.5rem;
+    }
+
+    &__login-container {
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }   
 }
