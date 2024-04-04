@@ -5,10 +5,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Logo from "../../assets/images/logo.png";
 import Company from "../../assets/images/company.png";
 import "./Header.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useNavigate } from "react";
+import { Link } from "react-router-dom";
+import menuIcon from "../../assets/Icons/hamburger.svg";
+import closeX from "../../assets/Icons/closingX.svg";
 
 function Header({ username }) {
   const [user, setUser] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const username1 = localStorage.getItem("username");
@@ -30,58 +35,6 @@ function Header({ username }) {
   };
 
   return (
-    // <Navbar expand="lg" className=" navbar navbar-dark bg-dark">
-    //   <Container fluid className="header__links">
-    //     <Navbar.Brand href="/services">
-    //       <img
-    //         className="logo"
-    //         src={Logo}
-    //         alt="logo"
-    //         style={{ maxHeight: "35px" }}
-    //       />
-    //       <img src={Company} alt="company name" style={{ maxHeight: "30px" }} />
-    //     </Navbar.Brand>
-    //     <Navbar.Toggle aria-controls="navbarScroll" />
-    //     <Navbar.Collapse id="navbarScroll">
-    //       <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }}>
-    //         {serviceProvider === "true" ? (
-    //           <Nav.Link as={NavLink} className="header__links" href="/feed">
-    //             Feed
-    //           </Nav.Link>
-    //         ) : (
-    //           <Nav.Link as={NavLink} className="header__links" href="/services">
-    //             Services
-    //           </Nav.Link>
-    //         )}
-    //         {user && serviceProvider === "false" ? (
-    //           <Nav.Link as={NavLink} className="header__links" href="/bookings">
-    //             My Bookings
-    //           </Nav.Link>
-    //         ) : (
-    //           <Nav.Link></Nav.Link>
-    //         )}
-    //         <Nav.Link as={NavLink} className="header__links" href="/support">
-    //           Support
-    //         </Nav.Link>
-    //       </Nav>
-    //       {user ? (
-    //         <Nav>
-    //           <Nav.Link>Welcome, {user}</Nav.Link>
-    //           <Nav.Link eventKey={2} href="/login" onClick={handleLogout}>
-    //             Log Out
-    //           </Nav.Link>
-    //         </Nav>
-    //       ) : (
-    //         <Nav>
-    //           <Nav.Link href="/signUp">Sign Up</Nav.Link>
-    //           <Nav.Link eventKey={2} href="/login">
-    //             Log In
-    //           </Nav.Link>
-    //         </Nav>
-    //       )}
-    //     </Navbar.Collapse>
-    //   </Container>
-    // </Navbar>
     <>
       <div className="header">
         <div className="header__logo-container">
@@ -91,54 +44,105 @@ function Header({ username }) {
         <div className="header__links-container">
           {/* Service provider profile */}
           {serviceProvider === "true" ? (
-            <a as={NavLink} className="header__links" href="/feed">
+            <Link as={NavLink} className="header__links" href="/feed">
               Feed
-            </a>
+            </Link>
           ) : (
-            <a as={NavLink} className="header__links" href="/services">
+            <Link as={NavLink} className="header__links" href="/services">
               Services
-            </a>
+            </Link>
           )}
           {/* if logged in and not a service provider */}
           {user && serviceProvider === "false" ? (
-            <a as={NavLink} className="header__links" href="/bookings">
+            <Link as={NavLink} className="header__links" href="/bookings">
               My Bookings
-            </a>
+            </Link>
           ) : (
-            <a></a>
+            <Link></Link>
           )}
-          <a as={NavLink} className="header__links" href="/support">
+          <Link as={NavLink} className="header__links" href="/support">
             Support
-          </a>
+          </Link>
         </div>
         <div className="header__login-container">
           <div>
             {/* if logged in */}
             {user ? (
               <div>
-                <a className="header__links">Welcome, {user}</a>
-                <a
+                <Link className="header__links">Welcome, {user}</Link>
+                <Link
                   className="header__links"
                   eventKey={2}
                   href="/login"
                   onClick={handleLogout}
                 >
                   Log Out
-                </a>
+                </Link>
               </div>
             ) : (
               <div>
-                <a href="/signUp" className="header__links">
+                <Link href="/signUp" className="header__links">
                   Sign Up
-                </a>
-                <a eventKey={2} href="/login" className="header__links">
+                </Link>
+                <Link eventKey={2} href="/login" className="header__links">
                   Log In
-                </a>
+                </Link>
               </div>
             )}
           </div>
         </div>
       </div>
+
+      <nav className="navbar">
+        <div className="navbar__top">
+          <div className="navbar__left">
+            <img
+              src={isOpen ? closeX : menuIcon}
+              alt="close X icon"
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="navbar__menu"
+            />
+            <p className="navbar__logo" onClick={() => navigate("/")}>
+              Crisis Connect
+            </p>
+          </div>
+          {/* <Avatar photoUrl="/images/profile/CurrentUser.jpg" modifier="--nav" /> */}
+        </div>
+
+        {/* Links */}
+        {isOpen && (
+          <div className="navbar__links">
+            <Link
+              onClick={() => setIsOpen(false)}
+              className="navbar__link"
+              to="/"
+            >
+              Current Disasters
+            </Link>
+            <Link
+              onClick={() => setIsOpen(false)}
+              className="navbar__link"
+              to="#"
+            >
+              About Us
+            </Link>
+            <Link
+              onClick={() => setIsOpen(false)}
+              className="navbar__link"
+              to="#"
+            >
+              How you can help
+            </Link>
+            <Link
+              onClick={() => setIsOpen(false)}
+              className="navbar__link"
+              to="#"
+            >
+              Contact Us
+            </Link>
+          </div>
+        )}
+      </nav>
     </>
   );
 }
